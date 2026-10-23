@@ -1,4 +1,4 @@
-<title>WOOP</title>
+<title>WOOP Pricing Calculator</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap">
 <style>
@@ -86,7 +86,6 @@ summary { cursor: pointer; font: 700 13px var(--head); color: var(--plum); }
 <div class="wrap">
   <div class="brandbar">
     <div><img class="logoL" alt="WOOP World of Parenting" id="woopL"><img class="logoD" alt="WOOP World of Parenting" id="woopD"></div>
-    <div class="for" id="forBox"></div>
   </div>
   <header>
     <h1 id="h1"></h1>
@@ -185,10 +184,6 @@ function pc(b, pct) { return Math.round(b * pct / 100); }
 
 function head() {
   $("woopL").src = "data:image/png;base64," + WOOP_L; $("woopD").src = "data:image/png;base64," + WOOP_D;
-  var f = $("forBox"); var h = "<small>Prepared for</small>";
-  if (C.clientLogoLight) { h += '<img class="logoL" alt="' + esc(C.client) + '" src="' + C.clientLogoLight + '"><img class="logoD" alt="' + esc(C.client) + '" src="' + (C.clientLogoDark || C.clientLogoLight) + '">'; }
-  else h += '<span class="cname">' + esc(C.client) + "</span>";
-  f.innerHTML = h;
   $("h1").innerHTML = "Build the price <span>layer by layer</span>";
   $("subline").textContent = "Pick an audience, then add only the layers you want. The cost per lead and the pilot total update as you go. " + (C.country ? "Rates are for " + C.country + "." : "");
   if (C.draftNote) { $("draft").hidden = false; $("draft").textContent = C.draftNote; }
